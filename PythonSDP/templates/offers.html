@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Reservation Offers</title>
+    <style>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .offer {
+            display: block;
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #333;
+            transition: background-color 0.3s ease;
+        }
+        .offer h2 {
+            margin-top: 0;
+            color: #555;
+        }
+        .offer p {
+            color: #777;
+        }
+        .offer:hover {
+            background-color: #e0e0e0;
+        }
+
+    </style>
+</head>
+<body>
+{% block body%}
+    <div class="container" align="center">
+        <h1>Flight Reservation Offers</h1>
+
+        <a href="{%url 'payment'%}" class="offer">
+            <h2>Get 10% Cashback on Flight Booking!</h2>
+            <p>Book your flight now and get 10% cashback credited to your account.</p>
+        </a>
+
+        <a href="{%url 'payment'%}" class="offer">
+            <h2>Free Movie Tickets with Every Booking!</h2>
+            <p>Enjoy a movie on us! Get free movie tickets with every flight reservation.</p>
+        </a>
+
+        <a href="{%url 'payment'%}" class="offer">
+            <h2>Exclusive Jewelry Offer for Travelers!</h2>
+            <p>Receive a special discount voucher for jewelry purchases upon booking your flight.</p>
+        </a>
+
+        <!-- Add more offers here -->
+
+</div>
+{% endblock%}
+</body>
+</html>

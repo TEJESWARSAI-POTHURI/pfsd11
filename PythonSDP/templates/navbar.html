@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" xmlns:padding-left="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Travel</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<style>
+    .navbar {
+        padding-left: 30px;
+    }
+    .navbar1 {
+      padding-left:  120px;
+    }
+</style>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg" style="background-color: #FEFCF3">
+
+    <div class="navbar">
+        <a href="{%url 'home'%}">
+<button type="button" class="btn btn-primary" style="background-color: #E36414; color: white; font-size: 20px; font-family: 'Your Font Name', sans-serif;">Projesky</button>
+   </a>
+    </div>
+
+ <div class="navbar">
+    <a class="navbar-brand" href="{%url 'home'%}">
+      <img src="data:image/jpeg;base64,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" alt="Logo" width="38" height="38" class="d-inline-block align-text-top">
+      Flights
+    </a>
+  </div>
+
+
+ <div class="navbar">
+    <a class="nav-link disabled" href="#">
+      <img src="https://pngimg.com/d/trian_PNG16662.png" alt="Logo" width="38" height="38" class="d-inline-block align-text-top">
+      Trains
+    </a>
+  </div>
+
+
+ <div class="navbar">
+    <a class="nav-link disabled" href="#">
+      <img src="https://www.shutterstock.com/image-vector/bus-icon-vector-template-flat-260nw-1413254132.jpg" alt="Logo" width="40" height="40" class="d-inline-block align-text-top">
+      Buses
+    </a>
+  </div>
+
+
+ <div class="navbar">
+    <a class="nav-link disabled" href="#">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjMJf8UL-1F0IFRjAHjRyxhxfTrk5Orhb4ow&usqp=CAU" alt="Logo" width="38" height="38" class="d-inline-block align-text-top">
+      Hotels
+    </a>
+  </div>
+
+
+ <div class="navbar">
+    <a class="nav-link disabled" href="#" aria-disabled="true">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAjVBMVEUAAAD////u7u7t7e35+fn09PT39/f8/PxxcXHx8fF7e3v19fXW1tYXFxdubm7Dw8Ovr6/b29u5ubkQEBBiYmLn5+ednZ12dnaSkpJTU1MaGhqoqKjNzc0JCQldXV3h4eE+Pj4xMTEmJiaKioo2NjZJSUmDg4O9vb0sLCxFRUVPT0+hoaE9PT0gICCWlpY2VKtcAAAOfklEQVR4nO1dC3ejKhAWQSl5mUdtksbEtGnTd///z7s+eAyIqanJJtfynT27ZwmO8yHCADOjhwQCn4PJIlGCQ1mERREVJUQWXaUo37tKtRxDx9AxvLxajqFjWMMQcwBZogjIEgCyBK5TlBcIhERAFsmSUJT0ZVH/wHVXJcqTz5wI+rTaV0JehH1ZxERRUO0rVyXqOIY+kCVKfqnWPxPlGDqGjuHlRTmG9bJaDvH/TJTHBAjlILJIlNCwWhSIkr4suk5Rf8BqU7LEI78Cc9mtLRxDx/DyajmGjuEf28UQVH1lH8kiWT+stqS0APuVxr0uUa0t71MYk2cV5dYWf4chB1yncAC1BICoytBxclG/ZqgNX0iuRapFjSo1K/rVdSQMpepHMcz+G0RRtLrpZZjfCPQEZMm8UZEsObWo0WoaTcOjGRIWJ3Pv/4R5EtMahtUej2gwfX66tMpH4+k9CVG/+kp7oQGC0o9LK/tr3GFETEKm1Ubxbn1pPVtguODDY80uRjZ6RttLK9kS24gzFG8kfIY+CZ8vreAJsKxniKIuEPS896iGIYourdrJEFkZhtNL63VCTOXKGTBcXFqrk2IhjXfJsEtPMMcUGQy78w4KRJxiabWRwaX1OQMGwPJmbHlpdc6ADZEMMdpcWpuzYCQZhumldTkTUs6Q4W6YMlU8+wVDTMeX1uRsmJbPED1cWpGz4aFY49OuzfUQ05xh//XSapwRbxR5KL60FmdFTDzU3XEmxypj2EVzRmEZeoPZpZU4LwZe9H/eWmuAF69bC98qdl6XZ8McK6+7Bk2JrvNzcHBwcHBwcHBwcNCxzLA5/37D+mk4nK2HArPZej3L/zp81WxY1uNX3XM917qoYc0tl5spi+O48MKLJ5Pe7evh291LrUrBxzGcjeJ0YMP3of2qO73uhG8bzCda8dhGcTQe9JWzIfFJSFE6eDngU7eaGHc7egG4GSsHcRVBhlA4qrvildeTXp6PnDhlARA1uTcvXO4YIsx0sMd+flktyVTTKsMvTgY/p+KW0m8xJ01XNfUX3OVWuLaKA/N+AB3sWWJcdj8NynBBezRCzTbuiJrRCL/yofzqxVWGCNVQHPR9jeEtLw80hmivX3U3QT5vGSvDmpulFa1+efg5KzgakQ3hra3qFotqpZqYl98TLUjC8GaJfoi3oNZ7ebdVrX59vPs0zu6o52eg1iOOvaxWVEI7Xj5CWqoH/Rm+oB+yRjC7VlNUyRpB7G3RCN/yCZRe8RjZ/GpTWat8qcSBct7c0CkeXhNRfDjVgx9aNXoLsOmrj0kbJ4TbicGwV60zlDfMGYID5bt6ht/Fu6QYVl2XyYtVoRWqMPRJO4ffPQOyfGbxK9rpDJGcVBKd4URdsiSBlSF4hsQ+lIasGm8Rtjw8exhAhuaInxMhkGGA5Q+RzvBOXTIIjSCJPGoiJGEIAg2sXa9H/CpDFrRjmPcMFZ1SPYp7JlqgC5Ej5nuoM1R96ZM71SmGeSNFq/FqPD3McBBYGGJkq9oYhdXHJENSYbijGsP4UfyQDzSKoR+oKyPi6wzjlxtFf1pMxZNHr4peOZZVGLbydxrnnetpKjQld8bva8xgKA9R3XikMwylGg+xrzOM9WZ7Gg1qHAlLNaoMWx0uzct7TYV9tTN+vyVaSB1Sc1OkM4zlRDMSnp/8Ksu7PU9so8d7wBkZDEkrhu8M9b+zfxdlhgbiG7+PCUz1EAJtIwRTPVDl/LgSKSF4NgjrhG1bh0ypPWtEkLbyJpn4rJgAlmWzGePWI9FDW0HTR0SLDVPcV6pT52PoxGsKcV1utfnKasu6easAn12mCBrPBEWqr6E2SDOXifrlqwhhVQxVT1IMixqNGcqJNx+3YgYjnS2GSHMsc4EkmpVsENKHmpXOEGg7YzrDbQ3DsCnDxxQyfA0gw1Yn9cO8tXyU+zPc6c8iR6oxpGDYHlGd4VsNQz/+aqbIRory8yE7DgBD8vPl9ZgNyv6Qv0fZagOlcAzoIciQxWBDYaX3Uqx4GAyDtGYDx0CkGPrk3UtDwLDfhmFp7GayoseCYgz1eYEModnieR99jWFiXKQY+iRpspn0QAHD+DUbxGHGgdodliYYih6fd3ZfN6d87RlC6+k+ZnUMlwZDHPYbbEQkik6xXbChJ2PoYcZl7fLVLpjTMwMTMiTQDnkkOsNv9dPGYJiPwclPrmePwDgsmnKDYE6FdsuLFRGyNvnKDox9Ig6uRB9qOUuLAG3JEA7BwrzWdjGi94NK7JEatMKiKRP/ZAzzIbQYNki+NZmqbZGHsieK/AzasH9blolUD5rhsi33kvRUD4QkBzY+X2OQNaLYD5kNtKwRrayavFeV+wX52zRXmwa3pakvuo+2DzPnDGXwEQRjmuVdMMQ+PRCdu4cmbtnGd1rGAdtSpDEeJ9ouhorx/iiblTPE2qC/0xgyfdflnVQZ5qC1U3eqGAqv7Z3GcF9zYTNEao2Pn7xb2efLTioY6qbARGNIjM3Pb2pliPsoffMs2MLuwMe6ocbQskA5Aj0pC9PsJRe99Ia/GSVD8nmAITUNxztqY5iLIub6LMcAMAzEKuWEDGdAFhgUxwFkqG+lbrHOsKL2B2V1e23V1d6SAoahmHgSyBB/Vq46Br6SxZgwv9Ypgwz1pyTWAVytoLIGXH+gfg3DKsUFFEXFAc9OY9jOBfEOyhIbmT0xYxdqGUHge52hv60KfUvqGJpbGI/U+kprDFtGwO5hyhUxW0xEzpVCLWMoWUiGxUXWPrT+EE+xkr1Fn/2/gShM5KbVGyNKq5Zz/n0MUjFwMu8MZmYwZ9wB1RJR1ASofiVIqyfrY+2oMQGViFq/PECtSLstxUxh2aOy9iqWAntZkrVkYJ7/RPyhM2u3U9gkJPSrZ08EmLG5YQFEAfNPracyrWg7hgsgC5cdQonP1DIn3KHPXy2u1oGThc0AhZXzwz5ssaR8A7koYLwMNK3aLS9GsLV8Px9VEFFqBbFpNIlRiKt1UPjTBClR5WXwkOtNayw4772ekOGXdjaRC1sg0PCVAMahwfDwRsVsr0QJhsq0+SBQFJyUPmG7By2D0VdAlp9vbL/AroXMlU8irP5SrR9jxzYTnSHcW0dQlLbDoHYLMq1sh0bH4BsyZMzbxirzHak2X8T8uq5lx5LqDNUx3ofWHQabW4AEakXbxW89E43hOhvfFMOqKWkwbHDSPq1huE76mqgC1axfOcOW8egYyMJkiUPFkFaO3N+kkVKq1cTe0BnK44Gd3Os4nBkym3LMQ6MjEQs6xf332RpWNWClk376+jNssngrGUorTIyM+FD2R8kw14q0fBHnVNpH4j6iJVllSXerJ8prtOme9DFM0MUtl23YPH1f8wMQKzaiec2WtMW6K3snn6ybnUwUQ6ZkKDaxp0HzvImkXTzzbFDH0OJ11dMZgoGmdmIsDxUlQ76A+kL+EQzbLRGz+cI8fC9lA9cEibHGsA/e0wH7tuZv4NIFQ3EGsEfH5L6s87triF4NQ81I5ggoUAsjcEifaceS+dJ4lK93VNvyEUuhYcr+IUOvhiG2nE5qXQua5TnDkGV/Xlaj2X2B4fMqke6GgiG3XBYIH8OQttpS9LwwsDC0pu7ZEKgWI2qDoVeolTuQEsICsbJDAdYZiqnCD2C+SuH0pmZBFPY1l4CWCUwWtk1Oq0m/QDpD1bQj2PCWCa5kKPZJZghm5EQvK46xxF1KYM+ybdMdgXJGNOZDZsu+tKBwEmOxWrBT1CAHrXydknxBLEXF1mNGBEW1ZPjOLJ/WsG2PrBPUF5WCrAoYAPKi8OBXOgL5BL1lYX8KUdRusiAgKmg553MvS3Wknf+P2Ca4RL5YxdaDYjin+IdE6gyroblcz3BRdsdP6fpZVmrL8NuilnXVkOip4pVF3KM/pIpHYGP1vtyJ46JYYg9RiIAom/FxFJ4satm8fT71ZPhkK3+Zkh8YDsAKiO8NBbxKzVbPNxRVOTw4EsO0opZtMsxbQmOohtKX4CDDFI7LX33IEE45GvZQVFtP08IlVj+4tTbsSE/3r1aPjxixeobBt/ZOi9P+UpR5eKWqlRMMP4VuuYDyPpAJa7VYrwPnk5X2GzRSmDnSp7qU2jdMq8daZjF52480zG+s1W61aj3tVR0u5xPJsnjIuWNwGi3NeJpX416VeBuBOay1a+aac27M9r0kEptIQRTt7A31v0fpJdTx3DgODg4ODg4ODg4ODg4ODg4ODhBdz9H64LU9/b52TL2Wx4pXj4VnTyLSGawjr4tfCQKYDbyw43n1kVd7cNUNjDOGHf++BfIQtQbEdQSv/fwrnV3OrD+lxXdIu2vWPKDy23ndfYhjiguGfme/2YUZ//5hV4fTNPeDL53k2wUNXSs2hbsHDwPo4ucBl2Xcv1f1eukKBmU4I/96fCe/Q8rdmrhjUuemDJm+z5OuV936LJIKexUMfT/o0lOchlWGmHToXYxQYGX4Uxqc/wueI4RrGKJOfEjvOSR+PUMUbS+tYEtsoyKLJWAonX55ZANbXIeT5u8w22GqJaDIGFZSNiDcMt70gliliJiEZEZJ5ZzdR2Hy3iqd5EXw9DztqxgilZETMIRBEjROWgYv/GPMk9inzJLA3q9hWCCcRtPV6CbDvCdwIyBL5o2KZMmpRd2soigKRKTZkQzzPk30wHdLLPyhot9ed6wohkUiqyMZFhcZke8w3oLLqgRZw3gLIcoSRH9CUUZwylEMiwsbycJXKepvMbTkZ/itWlckCjAUKTZ+zM9QQsmSRdcpqmK1NcjPUN5HFMGc7NcoyrS8UZO4cK0ltbz6VyjKMXQMHcPLi3IMO8DwOiexU86Hci0CUz2YeR0Op3qQn+m4SlFVuxSfzpi8BlF/a21xRWo5ho6hY3h5tc67i6Htav1SrSsS5XvGNy8zHP58pvzsZuU6S9E1iPoDVpvs1VdlLru1hWPoGF5eLcfQMfxTDP8DfFo8aApxQ9EAAAAASUVORK5CYII=" alt="Logo" width="38" height="38" class="d-inline-block align-text-top">
+      Visa
+    </a>
+  </div>
+
+   <div class="navbar">
+    <a class="nav-link dropdown-toggle disabled" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-disabled="true">
+        <img src="https://static.thenounproject.com/png/1143725-200.png" alt="Logo" width="38" height="38" class="d-inline-block align-text-top">
+        More
+    </a>
+    <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+    </ul>
+</div>
+
+     <div class="navbar1">
+    <a class="nav-link " href="{% url 'offers' %}">
+      <img src="https://image.shutterstock.com/image-photo/stock-photo-shopping-tags-line-icon-special-offer-sign-discount-coupons-symbol-quality-flat-web-app-element-250nw-1234400590.jpg" alt="Logo" width="38" height="38" class="d-inline-block align-text-top">
+      Offers
+    </a>
+  </div>
+
+     <div class="navbar">
+    <a class="navbar-brand" href="{%url 'customer'%}" >
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPl_txccnzUWwUiadDo8vlEPHkOP5VRQJrjE2tCM9jMQ&s" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+      Customer Service
+    </a>
+  </div>
+
+     <div class="navbar">
+    <a class="nav-link " href="{%url 'login' %}" aria-disabled="true">
+      <img src="https://static.vecteezy.com/system/resources/thumbnails/007/407/996/small/user-icon-person-icon-client-symbol-login-head-sign-icon-design-vector.jpg" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+      Login//SignUp
+    </a>
+  </div>
+
+
+
+
+
+</nav>
+{% block body %}
+{% endblock %}
+</body>
+</html>

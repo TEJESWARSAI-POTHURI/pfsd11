@@ -1,0 +1,54 @@
+{% extends 'adminnavbar.html' %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Information</title>
+
+</head>
+
+<body>
+{% block body %}
+    <h2 style="text-align:center">Flights Information</h2>
+    <table align="center">
+        <thead>
+            <tr>
+                <th>Flight Id</th>
+                <th>Flight Name</th>
+                <th>Flight Source</th>
+                <th>Flight Destination</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for flight in flight %}
+            <tr>
+                <td>{{ flight.FlightId }}</td>
+                <td>{{ flight.FlightName }}</td>
+                <td>{{ flight.FlightSource }}</td>
+                <td>{{ flight.FlightDestination }}</td>
+                <td>
+                    <a href="{% url 'edit-emp' flight.pk %}">Update</a>
+                </td>
+                <td>
+                    <a href="{% url 'remove-emp' flight.pk %}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <br><br>
+    <p class="alert alert-danger" role="alert">Do you want to enter more Flights?</p>
+
+    <p>
+        <a href="{% url 'insert-emp' %}">&lt;-- Go To Home Page</a>
+    </p>
+{% endblock %}
+
+</body>
+</html>
+

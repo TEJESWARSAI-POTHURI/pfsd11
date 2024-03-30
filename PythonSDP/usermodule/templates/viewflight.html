@@ -1,0 +1,43 @@
+{% extends 'usernavbar.html' %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Information</title>
+
+</head>
+
+<body>
+{% block body %}
+    <h2 style="text-align:center">Flights Information</h2>
+
+
+        <div class="row">
+            {% for flight in flight %}
+            <div class="col-md-4 mb-4">
+<div class="card" style="width: 18rem;">
+   <div class="card-body">
+    <h5 class="card-title">SS Flights</h5>
+       <p class="card-text">Flight ID {{ flight.FlightId }}</p>
+       <p class="card-text">Flight Name: {{ flight.FlightName }} </p>
+       <p class="card-text">Flight Source: {{ flight.FlightSource}} </p>
+       <p class="card-text">Flight Destination: {{ flight.FlightDestination }} </p>
+
+
+       <a  class="btn btn-success" href="{% url 'payme'%}">Book Now</a>
+   </div>
+</div>
+    </div>
+            {% endfor %}
+
+
+    <br><br>
+
+{% endblock %}
+        </div>
+
+</body>
+</html>
+

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+{% extends 'navbar.html' %}
+{% load static %}
+<html lang="en">
+{% block body %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+
+
+      /* Search Form */
+{
+  box-sizing: border-box;
+  margin-tpo=50px;
+}
+body {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;;
+}
+
+search-form {
+  border: 1px solid red;
+  width: 700px;
+  position: relative;
+  margin-top=-50px;
+}
+
+#header {
+  height: 80px;
+  background: red;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#header h1 {
+  color: #FFF;
+  margin-left: 20px;
+  font-size: 1.3em
+}
+
+.flight {
+  padding: 20px;
+}
+.flight input, select {
+    color: #6B6A6A;
+}
+
+.info-box {
+  padding: 10px 0;
+  margin-top: 20px;
+  flex: 1;
+  border-right: 20px solid transparent;
+}
+.info-box:last-child {
+  border-right: none;
+}
+.info-box label {
+  display: block;
+  color: #6B6A6A;
+  font-size: .9em;
+}
+.info-box input[type=text], input[type=submit], select {
+  border: none;
+  outline: none;
+  background: #E2E0E0;
+  margin-top: 5px;
+  width: 100%;
+  padding: 5px;
+  height: 30px;
+  border-radius: 3px;
+}
+
+#flight-type {
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px dotted silver;
+}
+#flight-type .info-box {
+  flex: 0 1 25%;
+  display:flex;
+  align-items: center;
+}
+
+#flight-depart {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dotted silver;
+}
+#flight-depart .info-box {
+  position: relative;
+}
+#depart-res, #arrive-res {
+  position: absolute;
+  background: #FFFFFF;
+}
+#depart-res p, #arrive-res p {
+  padding: 7px 2px;
+  border-bottom: 1px dotted silver;
+}
+#depart-res p:hover, #arrive-res p:hover {
+  background: #EDEDED;
+  cursor: pointer;
+}
+
+#flight-dates {
+  display: flex;
+  border-bottom: 1px dotted silver;
+}
+
+#flight-info {
+  display: flex;
+  border-bottom: 1px dotted silver;
+}
+
+#flight-search .info-box {
+  display: flex;
+  justify-content: center;
+}
+#flight-search input[type=submit] {
+  background: #55AF3A;
+  color: white;
+  padding: 0;
+  height: 50px;
+  font-size: 1.2em;
+}
+
+/* Calender */
+#calender {
+  border: 3px solid red;
+  padding: 5px;
+  opacity: 0;
+  background: #FFFFFF;
+  position: absolute;
+  transition: opacity .3s;
+  pointer-events: none;
+}
+
+.img{
+mix-blend-mode : screen;
+}
+#calender .nav {
+  padding: 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+#calender .nav button {
+  background: #FF3240;
+  border: none;
+  outline: none;
+  color: #FFFFFF;
+  padding: 5px 8px;
+  font-weight: 600;
+  border-radius: 3px;
+}
+table {
+  border: 1px solid #DBDBDB;
+  background: #F4F4F4;
+}
+table td {
+  border: 1px solid #DBDBDB;
+  padding: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+.normal {
+  color: rgba(0,0,0,.8)
+}
+.today {
+  background: #FF3240;
+  color: #FFFFFF;
+}
+.closed {
+  color: #DBDBDB;
+  cursor: default;
+}
+.picked {
+  background: green;
+}
+#month {
+  display: inline-block;
+}
+
+#confirm {
+  width: 500px;
+  padding: 20px;
+  border: 5px solid #55AF3A;
+  margin: 20px auto;
+  opacity: 0;
+}
+#confirm h3 {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+#confirm p {
+  padding: 10px;
+}
+#confirm strong {
+  font-weight: 600;
+}
+
+
+      .carousel-caption {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        text-align: right; /* Adjust text alignment as needed */
+        background: rgba(0, 0, 0, 0.5); /* Adjust background color and opacity as needed */
+      }
+
+      .carousel-caption h6{
+        color: white; /* Adjust text color as needed */
+        text-align: right;
+      }
+
+      .carousel-caption p {
+        color: white; /* Adjust text color as needed */
+        text-align: right;
+      }
+
+      .carousel-caption p {
+        text-align: center; /* Adjust text alignment as needed */
+        font-size: 1.5rem;
+      }
+
+    </style>
+
+</head>
+<body>
+
+<!-- Scrolling images part -->
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://www.fabhotels.com/blog/wp-content/uploads/2019/05/Agra-Fort_1400.jpg" class="d-block w-100" alt="Taj">
+      <div class="carousel-caption">
+        <h5>Agra-Fort</h5>
+        <h6>India</h6>
+        <p>Flight Booking</p>
+      </div>
+    </div>
+
+
+
+    <div class="carousel-item">
+      <img src="https://github.com/ASAISANKAR/images/blob/main/waterfall.jpg?raw=true" class="d-block w-100" alt="Itanagar">
+      <!--- size of the image is Width:1400px length:600px Resize the images https://www.iloveimg.com/resize-image#resize-options,pixels --->
+      <div class="carousel-caption">
+        <h5>Itanagar</h5>
+        <h6>India</h6>
+        <p>Flight Booking</p>
+      </div>
+    </div>
+
+
+
+    <div class="carousel-item">
+      <img src="https://github.com/ASAISANKAR/images/blob/main/ahmedabad.jpg?raw=true" class="d-block w-100" alt="Ahmedabad">
+      <div class="carousel-caption">
+        <h5>Ahmedabad</h5>
+        <h6>India</h6>
+        <p>Flight Booking</p>
+      </div>
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev"></button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next"></button>
+</div>
+<!-- End of Scrolling images part -->
+
+
+
+
+<br> <br>
+
+
+
+<!-- Flight Tickets Searching Form -->
+<div >
+
+  <div id="search-form">
+    <div id="header">
+      <h1>SEARCH FOR FLIGHTS</h1>
+    </div>
+    <section>
+      <div class="flight" id="flightbox">
+
+        <form id="flight-form">
+        <!-- TRIP TYPE -->
+        <div id="flight-type">
+          <div class="info-box">
+            <input type="radio" name="flight-type" value="Return" id="return" checked />
+            <label for="return">RETURN</label>
+          </div>
+          <div class="info-box">
+            <input type="radio" name="flight-type" value="Single" id="one-way" />
+            <label for="one-way">ONE WAY</label>
+          </div>
+        </div>
+
+        <!-- FROM/TO -->
+        <div id="flight-depart">
+          <div class="info-box">
+            <label for="">LEAVING FROM</label>
+            <input type="text" id="dep-from"  required >
+            <div id="depart-res"></div>
+          </div>
+          <div class="info-box" id="arrive-box">
+            <label for="">ARRIVING AT</label>
+            <input type="text" id="dep-to"   required >
+            <div id="arrive-res"></div>
+          </div>
+        </div>
+
+        <!-- FROM/TO -->
+        <div id="flight-dates">
+          <div class="info-box">
+            <label for="">LEAVING ON</label>
+            <input type="date" id="leave-date"  />
+          </div>
+          <div class="info-box" id="return-box">
+            <label for="">RETURNING ON</label>
+            <input type="date" id="return-date"  required>
+          </div>
+        </div>
+
+        <!-- PASSENGER INFO -->
+        <div id="flight-info">
+          <div class="info-box">
+            <label for="adults">ADULTS</label>
+            <select name="adults" id="adults" required>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </select>
+          </div>
+          <div class="info-box">
+            <label for="children">CHILDREN</label>
+            <select name="children" id="children" required>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="0">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+          <div class="info-box">
+            <label for="class-type">CLASS</label>
+            <select name="class-type" id="class-type" required>
+              <option value="Economy">ECONOMY</option>
+              <option value="Business">BUSINESS</option>
+              <option value="First">FIRST CLASS</option>
+            </select>
+          </div>
+      </div>
+
+        <!-- SEARCH BUTTON -->
+      <div id="flight-search">
+        <div class="info-box">
+         <a href="{%url 'search' %}">
+          <button type="button" class="btn btn-success">Search Flights</button>
+         </a>
+        </div>
+      </div>
+
+      </form>
+      </div>
+    </section>
+</div>
+
+
+
+</div>
+<!-- End of Flight Tickets Searching Form -->
+
+
+</body>
+{% endblock%}
+</html>

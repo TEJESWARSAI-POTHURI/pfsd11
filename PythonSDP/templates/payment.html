@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment Gateway</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .main-content {
+            text-align: center;
+        }
+
+        .text {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .centre-content {
+            text-align: center;
+        }
+
+        .price {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .price span {
+            font-size: 24px;
+            color: #666;
+        }
+
+        .last-content {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .pay-now-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .pay-now-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .card-details {
+            margin-top: 20px;
+        }
+
+        .card-details p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .card-number,
+        .date-number,
+        .cvv-number,
+        .nameholder-number {
+            margin-bottom: 10px;
+        }
+
+        .card-number input,
+        .date-number input,
+        .cvv-number input,
+        .nameholder-number input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+          #qr-image {
+            max-width: 100%;
+            display: none; /* Initially hide the image */
+            margin-top: 20px;
+        }
+
+        .submit-now-btn {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .submit-now-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="main-content">
+            <p class="text">Payment Gateway</p>
+        </div>
+
+        <div class="centre-content">
+            <h1 class="price">2499<span>/-</span></h1>
+            <p class="course"></p>
+        </div>
+
+        <div class="last-content">
+
+
+            <a href="{% url 'offers'%}"><button type="button" class="pay-now-btn">Apply Coupons</button></a>
+            <a href="{% url 'phonepay' %}"> <button type="button" class="pay-now-btn">Pay with UPI</button> </a>
+
+            <!-- <button type="button" class="pay-now-btn">Netbanking options</button> -->
+        </div>
+
+        <div class="card-details">
+            <p>Pay using Credit or Debit card</p>
+
+            <div class="card-number">
+                <label>Card Number</label>
+                <input type="text" class="card-number-field" placeholder="###-###-###" />
+            </div>
+            <br />
+            <div class="date-number">
+                <label>Expiry Date</label>
+                <input type="text" class="date-number-field" placeholder="DD-MM-YY" />
+            </div>
+
+            <div class="cvv-number">
+                <label>CVV number</label>
+                <input type="text" class="cvv-number-field" placeholder="xxx" />
+            </div>
+            <div class="nameholder-number">
+                <label>Card Holder name</label>
+                <input type="text" class="card-name-field" placeholder="Enter your Name" />
+            </div>
+            <div align="center">
+           <a href="{% url 'thankyou' %}"> <button  type="submit" class="submit-now-btn">Pay</button></a>
+             </div>
+            </div>
+    </div>
+</body>
+</html>

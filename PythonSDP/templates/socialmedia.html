@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Buttons</title>
+    <style>
+          body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .social-container {
+            position: relative;
+            width: 300px; /* Adjust as needed */
+            height: 300px; /* Adjust as needed */
+            margin: auto;
+        }
+        .social-btn {
+            position: absolute;
+            width: 60px; /* Adjust as needed */
+            height: 60px; /* Adjust as needed */
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .social-btn img {
+            max-width: 100%;
+            height: auto;
+        }
+        /* Adjust the following classes based on the number of icons */
+        .social-btn:nth-child(1) {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -120%);
+        }
+        .social-btn:nth-child(2) {
+            top: 50%;
+            left: 50%;
+            transform: translate(-170%, -50%);
+        }
+        .social-btn:nth-child(3) {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 70%);
+        }
+        .social-btn:nth-child(4) {
+            top: 50%;
+            left: 50%;
+            transform: translate(70%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <h1>Social Media Buttons</h1>
+    <div class="social-container">
+    <div class="social-btn" onclick="window.location.href='https://www.facebook.com'">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1024px-Facebook_f_logo_%282019%29.svg.png" alt="Facebook" width="100">
+    </div>
+    <div class="social-btn" onclick="window.location.href='https://twitter.com'">
+        <img src="https://th.bing.com/th/id/OIP.CMGN1YrmE20USUOkjLA50wHaHa?rs=1&pid=ImgDetMain" alt="Twitter" width="100">
+    </div>
+    <div class="social-btn" onclick="window.location.href='https://www.instagram.com'">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1024px-Instagram_icon.png" alt="Instagram" width="100">
+    </div>
+    <div class="social-btn" onclick="window.location.href='https://www.linkedin.com'">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/600px-LinkedIn_logo_initials.png" alt="LinkedIn" width="100">
+    </div>
+        </div>
+    <!-- Add more social buttons as needed -->
+</body>
+</html>
